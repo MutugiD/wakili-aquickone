@@ -1,0 +1,10 @@
+
+        AFFIDAVIT
+
+        Deponent: [Deponent Name]
+        Facts: Draft an affidavit for a tenant confirming property condition.
+        Research: [Relevant research/case law]
+        Statement: [Statement]
+
+        [This draft requires human review before swearing.]
+        

@@ -1,0 +1,13 @@
+
+        DEMAND LETTER
+
+        From: [Client Name]
+        To: [Recipient Name]
+
+        Facts: Based on the research, draft a demand letter for breach of lease agreement
+        Legal Basis: [Legal basis]
+        Research: [Relevant research/case law]
+        Demand: [Demand details]
+
+        [This draft requires human review before sending.]
+        

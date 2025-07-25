@@ -1,0 +1,10 @@
+
+        AFFIDAVIT
+
+        Deponent: Jane Doe
+        Facts: I vacated the property and left it in good condition.
+        Research: Inspection report attached.
+        Statement: I swear this affidavit is true to the best of my knowledge.
+
+        [This draft requires human review before swearing.]
+        

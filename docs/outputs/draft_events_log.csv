@@ -1,0 +1,14 @@
+timestamp,doc_type,filename,context
+20250724_140243,demand_letter,demand_letter_20250724_140243.txt,"{'facts': ""Draft a demand letter for my client's deposit refund case""}"
+20250724_140512,demand_letter,demand_letter_20250724_140512.txt,"{'facts': ""Draft a demand letter for my client's deposit refund case""}"
+20250724_140515,plaint,plaint_20250724_140515.txt,{'facts': 'Draft a plaint for breach of contract.'}
+20250724_140516,brief,brief_20250724_140516.txt,{'facts': 'Draft a legal brief on tenant rights in deposit refund disputes.'}
+20250724_140518,affidavit,affidavit_20250724_140518.txt,{'facts': 'Draft an affidavit for a tenant confirming property condition.'}
+20250724_140911,demand_letter,demand_letter_20250724_140911.txt,"{'facts': ""Draft a demand letter for my client's deposit refund case""}"
+20250724_140914,plaint,plaint_20250724_140914.txt,{'facts': 'Draft a plaint for breach of contract.'}
+20250724_140915,brief,brief_20250724_140915.txt,{'facts': 'Draft a legal brief on tenant rights in deposit refund disputes.'}
+20250724_140917,affidavit,affidavit_20250724_140917.txt,{'facts': 'Draft an affidavit for a tenant confirming property condition.'}
+20250724_140937,demand_letter,demand_letter_20250724_140937.txt,"{'facts': ""Draft a demand letter for my client's deposit refund case""}"
+20250724_140941,plaint,plaint_20250724_140941.txt,{'facts': 'Draft a plaint for breach of contract.'}
+20250724_140942,brief,brief_20250724_140942.txt,{'facts': 'Draft a legal brief on tenant rights in deposit refund disputes.'}
+20250724_140944,affidavit,affidavit_20250724_140944.txt,{'facts': 'Draft an affidavit for a tenant confirming property condition.'}

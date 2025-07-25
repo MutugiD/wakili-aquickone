@@ -1,0 +1,13 @@
+
+        DEMAND LETTER
+
+        From: [Client Name]
+        To: [Recipient Name]
+
+        Facts: Draft a demand letter for my client's deposit refund case
+        Legal Basis: [Legal basis]
+        Research: [Relevant research/case law]
+        Demand: [Demand details]
+
+        [This draft requires human review before sending.]
+        

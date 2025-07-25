@@ -1,0 +1,12 @@
+
+        PLAINT
+
+        Plaintiff: Acme Ltd
+        Defendant: Beta Ltd
+
+        Facts: Breach of contract for supply of goods.
+        Research: Acme Ltd v. Beta Ltd [2020] eKLR
+        Relief Sought: Damages of KES 1,000,000 and interest.
+
+        [This draft requires human review before filing.]
+        

@@ -1,0 +1,12 @@
+
+        PLAINT
+
+        Plaintiff: [Plaintiff Name]
+        Defendant: [Defendant Name]
+
+        Facts: Draft a plaint for breach of contract.
+        Research: [Relevant research/case law]
+        Relief Sought: [Relief sought]
+
+        [This draft requires human review before filing.]
+        
