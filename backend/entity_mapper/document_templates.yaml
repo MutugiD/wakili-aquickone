@@ -1,0 +1,738 @@
+# Document Templates Configuration
+# This file contains field templates for different document types
+# Enhanced with more document types and better extraction patterns
+
+document_types:
+  employment_contract:
+    name: "Employment Contract"
+    description: "Employment agreement between employer and employee"
+    keywords: ["employment", "contract", "hire", "employee", "employer", "job", "work", "salary", "position"]
+    fields:
+      employer_name:
+        type: "text"
+        label: "Employer Name"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 2
+          max_length: 100
+        extraction_patterns:
+          - "employer"
+          - "company"
+          - "organization"
+          - "corporation"
+
+      employee_name:
+        type: "text"
+        label: "Employee Name"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 2
+          max_length: 100
+        extraction_patterns:
+          - "employee"
+          - "worker"
+          - "staff"
+          - "candidate"
+          - "hire"
+
+      position:
+        type: "text"
+        label: "Job Position/Title"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 2
+          max_length: 100
+        extraction_patterns:
+          - "position"
+          - "job title"
+          - "role"
+          - "designation"
+          - "software engineer"
+          - "developer"
+
+      salary:
+        type: "number"
+        label: "Salary Amount"
+        required: true
+        priority: "high"
+        validation:
+          min: 0
+          max: 999999999
+        extraction_patterns:
+          - "salary"
+          - "compensation"
+          - "remuneration"
+          - "pay"
+          - "wage"
+          - "kes"
+
+      start_date:
+        type: "date"
+        label: "Start Date"
+        required: true
+        priority: "high"
+        validation:
+          min: "1900-01-01"
+          max: "2100-12-31"
+        extraction_patterns:
+          - "start date"
+          - "commencement"
+          - "effective date"
+          - "joining date"
+
+      work_location:
+        type: "text"
+        label: "Work Location"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 2
+          max_length: 200
+        extraction_patterns:
+          - "location"
+          - "workplace"
+          - "office"
+          - "site"
+          - "upperhill"
+          - "nairobi"
+
+  offer_letter:
+    name: "Offer Letter"
+    description: "Job offer letter to candidate"
+    keywords: ["offer", "letter", "job offer", "employment offer", "employment letter", "hire", "candidate", "position"]
+    fields:
+      company_name:
+        type: "text"
+        label: "Company Name"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 2
+          max_length: 100
+        extraction_patterns:
+          - "company"
+          - "organization"
+          - "employer"
+
+      candidate_name:
+        type: "text"
+        label: "Candidate Name"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 2
+          max_length: 100
+        extraction_patterns:
+          - "candidate"
+          - "applicant"
+          - "hire"
+          - "employee"
+
+      position:
+        type: "text"
+        label: "Job Position/Title"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 2
+          max_length: 100
+        extraction_patterns:
+          - "position"
+          - "job title"
+          - "role"
+          - "designation"
+          - "software engineer"
+          - "developer"
+
+      salary:
+        type: "number"
+        label: "Salary Amount"
+        required: true
+        priority: "high"
+        validation:
+          min: 0
+          max: 999999999
+        extraction_patterns:
+          - "salary"
+          - "compensation"
+          - "remuneration"
+          - "pay"
+          - "wage"
+          - "kes"
+
+      benefits:
+        type: "textarea"
+        label: "Benefits Package"
+        required: false
+        priority: "medium"
+        validation:
+          min_length: 10
+          max_length: 1000
+        extraction_patterns:
+          - "benefits"
+          - "package"
+          - "insurance"
+          - "medical"
+          - "pension"
+
+      start_date:
+        type: "date"
+        label: "Proposed Start Date"
+        required: true
+        priority: "high"
+        validation:
+          min: "1900-01-01"
+          max: "2100-12-31"
+        extraction_patterns:
+          - "start date"
+          - "commencement"
+          - "effective date"
+          - "joining date"
+
+  demand_letter:
+    name: "Demand Letter"
+    description: "Legal demand for payment or action"
+    fields:
+      client_name:
+        type: "text"
+        label: "Client Name"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 2
+          max_length: 100
+        extraction_patterns:
+          - "client"
+          - "sender"
+          - "from"
+
+      recipient_name:
+        type: "text"
+        label: "Recipient Name"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 2
+          max_length: 100
+        extraction_patterns:
+          - "recipient"
+          - "debtor"
+          - "to"
+          - "defendant"
+
+      recipient_address:
+        type: "textarea"
+        label: "Recipient Address"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 10
+          max_length: 500
+        extraction_patterns:
+          - "address"
+          - "location"
+          - "residence"
+
+      amount_owed:
+        type: "number"
+        label: "Amount Owed"
+        required: true
+        priority: "high"
+        validation:
+          min: 0
+          max: 999999999
+        extraction_patterns:
+          - "amount"
+          - "payment"
+          - "debt"
+          - "owed"
+          - "due"
+
+      due_date:
+        type: "date"
+        label: "Due Date"
+        required: false
+        priority: "medium"
+        validation:
+          min: "1900-01-01"
+          max: "2100-12-31"
+        extraction_patterns:
+          - "due date"
+          - "payment date"
+          - "deadline"
+
+      payment_terms:
+        type: "textarea"
+        label: "Payment Terms"
+        required: false
+        priority: "medium"
+        validation:
+          min_length: 10
+          max_length: 1000
+        extraction_patterns:
+          - "terms"
+          - "conditions"
+          - "payment terms"
+
+      legal_basis:
+        type: "textarea"
+        label: "Legal Basis"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 20
+          max_length: 2000
+        extraction_patterns:
+          - "legal basis"
+          - "grounds"
+          - "reason"
+          - "cause"
+
+      deadline:
+        type: "date"
+        label: "Payment Deadline"
+        required: false
+        priority: "medium"
+        validation:
+          min: "1900-01-01"
+          max: "2100-12-31"
+        extraction_patterns:
+          - "deadline"
+          - "final date"
+          - "last date"
+
+  contract:
+    name: "Contract"
+    description: "Legal agreement between parties"
+    fields:
+      party1_name:
+        type: "text"
+        label: "First Party Name"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 2
+          max_length: 100
+        extraction_patterns:
+          - "first party"
+          - "party 1"
+          - "employer"
+          - "landlord"
+
+      party2_name:
+        type: "text"
+        label: "Second Party Name"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 2
+          max_length: 100
+        extraction_patterns:
+          - "second party"
+          - "party 2"
+          - "employee"
+          - "tenant"
+
+      contract_type:
+        type: "select"
+        label: "Contract Type"
+        required: true
+        priority: "high"
+        options:
+          - "Employment"
+          - "Service"
+          - "Lease"
+          - "Purchase"
+          - "Partnership"
+          - "Other"
+        extraction_patterns:
+          - "employment contract"
+          - "service agreement"
+          - "lease agreement"
+          - "purchase agreement"
+
+      start_date:
+        type: "date"
+        label: "Start Date"
+        required: true
+        priority: "high"
+        validation:
+          min: "1900-01-01"
+          max: "2100-12-31"
+        extraction_patterns:
+          - "start date"
+          - "commencement"
+          - "effective date"
+
+      end_date:
+        type: "date"
+        label: "End Date"
+        required: false
+        priority: "medium"
+        validation:
+          min: "1900-01-01"
+          max: "2100-12-31"
+        extraction_patterns:
+          - "end date"
+          - "termination"
+          - "expiry"
+
+      terms:
+        type: "textarea"
+        label: "Terms and Conditions"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 50
+          max_length: 5000
+        extraction_patterns:
+          - "terms"
+          - "conditions"
+          - "clauses"
+
+      compensation:
+        type: "text"
+        label: "Compensation/Consideration"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 5
+          max_length: 200
+        extraction_patterns:
+          - "salary"
+          - "compensation"
+          - "payment"
+          - "consideration"
+
+  plaint:
+    name: "Plaint"
+    description: "Court filing document"
+    fields:
+      plaintiff_name:
+        type: "text"
+        label: "Plaintiff Name"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 2
+          max_length: 100
+        extraction_patterns:
+          - "plaintiff"
+          - "complainant"
+          - "petitioner"
+
+      defendant_name:
+        type: "text"
+        label: "Defendant Name"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 2
+          max_length: 100
+        extraction_patterns:
+          - "defendant"
+          - "respondent"
+          - "accused"
+
+      court_name:
+        type: "text"
+        label: "Court Name"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 5
+          max_length: 200
+        extraction_patterns:
+          - "court"
+          - "tribunal"
+          - "magistrate"
+
+      case_type:
+        type: "select"
+        label: "Case Type"
+        required: true
+        priority: "high"
+        options:
+          - "Civil"
+          - "Criminal"
+          - "Family"
+          - "Commercial"
+          - "Employment"
+          - "Other"
+        extraction_patterns:
+          - "civil case"
+          - "criminal case"
+          - "family case"
+          - "commercial case"
+
+      cause_of_action:
+        type: "textarea"
+        label: "Cause of Action"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 20
+          max_length: 2000
+        extraction_patterns:
+          - "cause of action"
+          - "grounds"
+          - "basis"
+          - "reason"
+
+      relief_sought:
+        type: "textarea"
+        label: "Relief Sought"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 20
+          max_length: 2000
+        extraction_patterns:
+          - "relief"
+          - "remedy"
+          - "damages"
+          - "compensation"
+
+      facts:
+        type: "textarea"
+        label: "Statement of Facts"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 50
+          max_length: 5000
+        extraction_patterns:
+          - "facts"
+          - "circumstances"
+          - "events"
+          - "incident"
+
+  affidavit:
+    name: "Affidavit"
+    description: "Sworn statement"
+    fields:
+      affiant_name:
+        type: "text"
+        label: "Affiant Name"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 2
+          max_length: 100
+        extraction_patterns:
+          - "affiant"
+          - "deponent"
+          - "witness"
+
+      affiant_address:
+        type: "textarea"
+        label: "Affiant Address"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 10
+          max_length: 500
+        extraction_patterns:
+          - "address"
+          - "residence"
+          - "location"
+
+      purpose:
+        type: "text"
+        label: "Purpose of Affidavit"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 10
+          max_length: 200
+        extraction_patterns:
+          - "purpose"
+          - "reason"
+          - "objective"
+
+      facts:
+        type: "textarea"
+        label: "Statement of Facts"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 50
+          max_length: 5000
+        extraction_patterns:
+          - "facts"
+          - "circumstances"
+          - "events"
+          - "incident"
+
+      exhibits:
+        type: "textarea"
+        label: "Exhibits Attached"
+        required: false
+        priority: "low"
+        validation:
+          min_length: 5
+          max_length: 1000
+        extraction_patterns:
+          - "exhibits"
+          - "attachments"
+          - "documents"
+
+      date_of_events:
+        type: "date"
+        label: "Date of Events"
+        required: false
+        priority: "medium"
+        validation:
+          min: "1900-01-01"
+          max: "2100-12-31"
+        extraction_patterns:
+          - "date of events"
+          - "incident date"
+          - "when"
+
+  brief:
+    name: "Legal Brief"
+    description: "Legal argument document"
+    fields:
+      case_name:
+        type: "text"
+        label: "Case Name"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 5
+          max_length: 200
+        extraction_patterns:
+          - "case name"
+          - "matter"
+          - "title"
+
+      court_name:
+        type: "text"
+        label: "Court Name"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 5
+          max_length: 200
+        extraction_patterns:
+          - "court"
+          - "tribunal"
+          - "forum"
+
+      case_number:
+        type: "text"
+        label: "Case Number"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 3
+          max_length: 50
+        extraction_patterns:
+          - "case number"
+          - "file number"
+          - "reference"
+
+      issue:
+        type: "textarea"
+        label: "Legal Issue"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 20
+          max_length: 2000
+        extraction_patterns:
+          - "issue"
+          - "question"
+          - "matter"
+          - "point"
+
+      argument:
+        type: "textarea"
+        label: "Legal Argument"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 50
+          max_length: 5000
+        extraction_patterns:
+          - "argument"
+          - "submission"
+          - "contention"
+
+      authorities:
+        type: "textarea"
+        label: "Legal Authorities"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 20
+          max_length: 2000
+        extraction_patterns:
+          - "authorities"
+          - "cases"
+          - "precedents"
+          - "statutes"
+
+      conclusion:
+        type: "textarea"
+        label: "Conclusion"
+        required: true
+        priority: "high"
+        validation:
+          min_length: 20
+          max_length: 1000
+        extraction_patterns:
+          - "conclusion"
+          - "summary"
+          - "finding"
+
+# Field type definitions
+field_types:
+  text:
+    component: "input"
+    input_type: "text"
+    validation_rules:
+      - "required"
+      - "min_length"
+      - "max_length"
+
+  textarea:
+    component: "textarea"
+    input_type: "text"
+    validation_rules:
+      - "required"
+      - "min_length"
+      - "max_length"
+
+  number:
+    component: "input"
+    input_type: "number"
+    validation_rules:
+      - "required"
+      - "min"
+      - "max"
+
+  date:
+    component: "input"
+    input_type: "date"
+    validation_rules:
+      - "required"
+      - "min"
+      - "max"
+
+  select:
+    component: "select"
+    input_type: "select"
+    validation_rules:
+      - "required"
+      - "options"
+
+# Priority levels for field ordering
+priorities:
+  high: 1
+  medium: 2
+  low: 3

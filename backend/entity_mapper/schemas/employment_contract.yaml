@@ -1,0 +1,230 @@
+# Dynamic Employment Contract Schema
+# This demonstrates the flexible approach for any document type
+
+employment_contract:
+  name: "Employment Contract"
+  description: "Employment agreement between employer and employee"
+  category: "employment"
+  jurisdiction: "kenya"
+
+  # Dynamic field discovery patterns
+  field_discovery:
+    # Party identification patterns
+    parties:
+      - pattern: "employer|company|organization|corporation"
+        field_type: "party"
+        role: "employer"
+        priority: "critical"
+      - pattern: "employee|worker|staff|personnel"
+        field_type: "party"
+        role: "employee"
+        priority: "critical"
+
+    # Core employment terms
+    employment_terms:
+      - pattern: "position|job title|role|designation"
+        field_type: "text"
+        validation: "required"
+        priority: "high"
+      - pattern: "salary|compensation|remuneration|pay|wage"
+        field_type: "currency"
+        validation: "required"
+        priority: "high"
+      - pattern: "start date|commencement|effective date|joining date"
+        field_type: "date"
+        validation: "required"
+        priority: "high"
+      - pattern: "duration|term|period|contract length"
+        field_type: "duration"
+        validation: "optional"
+        priority: "medium"
+      - pattern: "probation|trial period|probationary period"
+        field_type: "duration"
+        validation: "optional"
+        priority: "medium"
+
+    # Work arrangements
+    work_arrangements:
+      - pattern: "working hours|schedule|time|shift"
+        field_type: "text"
+        validation: "required"
+        priority: "high"
+      - pattern: "location|workplace|office|site"
+        field_type: "text"
+        validation: "required"
+        priority: "high"
+      - pattern: "remote|work from home|hybrid|flexible"
+        field_type: "boolean"
+        validation: "optional"
+        priority: "medium"
+
+    # Benefits and conditions
+    benefits:
+      - pattern: "leave|vacation|holiday|time off"
+        field_type: "text"
+        validation: "optional"
+        priority: "medium"
+      - pattern: "health|medical|insurance|benefits"
+        field_type: "text"
+        validation: "optional"
+        priority: "medium"
+      - pattern: "bonus|incentive|performance|commission"
+        field_type: "text"
+        validation: "optional"
+        priority: "low"
+
+    # Legal clauses
+    legal_clauses:
+      - pattern: "confidentiality|nda|non-disclosure"
+        field_type: "boolean"
+        validation: "optional"
+        priority: "medium"
+      - pattern: "non-compete|restrictive covenant"
+        field_type: "boolean"
+        validation: "optional"
+        priority: "medium"
+      - pattern: "termination|notice period|severance"
+        field_type: "text"
+        validation: "required"
+        priority: "high"
+      - pattern: "dispute|grievance|arbitration"
+        field_type: "text"
+        validation: "optional"
+        priority: "low"
+
+  # Dynamic field generation rules
+  field_generation:
+    # Auto-generate fields based on conversation context
+    auto_fields:
+      - trigger: "salary mentioned"
+        generate: ["salary_amount", "payment_frequency", "currency"]
+      - trigger: "remote work mentioned"
+        generate: ["remote_policy", "equipment_provided", "internet_allowance"]
+      - trigger: "confidentiality mentioned"
+        generate: ["confidentiality_scope", "duration", "penalties"]
+
+    # Conditional fields
+    conditional_fields:
+      - condition: "probation_period > 0"
+        add_fields: ["probation_terms", "evaluation_criteria"]
+      - condition: "bonus_mentioned = true"
+        add_fields: ["bonus_structure", "performance_metrics"]
+      - condition: "remote_work = true"
+        add_fields: ["remote_guidelines", "equipment_policy"]
+
+  # Validation rules
+  validation:
+    required_sections:
+      - "parties"
+      - "employment_terms"
+      - "work_arrangements"
+      - "termination"
+
+    legal_requirements:
+      - "minimum_wage_compliance"
+      - "working_hours_limits"
+      - "leave_entitlements"
+      - "notice_periods"
+
+    business_logic:
+      - "start_date <= end_date"
+      - "salary >= minimum_wage"
+      - "probation_period <= 6_months"
+
+  # Document generation templates
+  templates:
+    kenya_employment_act:
+      name: "Kenya Employment Act 2007"
+      sections:
+        - "parties_identification"
+        - "employment_terms"
+        - "remuneration"
+        - "working_conditions"
+        - "leave_entitlements"
+        - "termination_procedures"
+        - "dispute_resolution"
+
+    standard_employment:
+      name: "Standard Employment Contract"
+      sections:
+        - "parties"
+        - "position_and_duties"
+        - "compensation"
+        - "benefits"
+        - "working_conditions"
+        - "confidentiality"
+        - "termination"
+        - "general_provisions"
+
+  # Dynamic clause generation
+  clause_generation:
+    # Standard clauses that can be customized
+    standard_clauses:
+      confidentiality:
+        template: "The Employee agrees to maintain strict confidentiality..."
+        variables: ["confidentiality_scope", "duration", "penalties"]
+
+      non_compete:
+        template: "During employment and for [duration] thereafter..."
+        variables: ["duration", "geographic_scope", "business_scope"]
+
+      termination:
+        template: "Either party may terminate this agreement with [notice_period] notice..."
+        variables: ["notice_period", "termination_reasons", "severance"]
+
+    # Custom clause generation based on context
+    custom_clauses:
+      - trigger: "industry_specific"
+        generate: "industry_appropriate_clauses"
+      - trigger: "senior_position"
+        generate: "executive_level_clauses"
+      - trigger: "international_work"
+        generate: "international_work_clauses"
+
+  # Review and validation workflow
+  review_workflow:
+    stages:
+      1:
+        name: "Information Gathering"
+        description: "Extract and validate all required information"
+        validation: "required_fields_complete"
+
+      2:
+        name: "Legal Compliance"
+        description: "Ensure compliance with employment laws"
+        validation: "legal_requirements_met"
+
+      3:
+        name: "Business Terms"
+        description: "Review and finalize business terms"
+        validation: "business_terms_agreed"
+
+      4:
+        name: "Document Generation"
+        description: "Generate final document"
+        validation: "document_complete"
+
+  # User interaction patterns
+  user_interaction:
+    # Questions to ask user for missing information
+    information_gathering:
+      - "What is the employee's job title and main responsibilities?"
+      - "What is the agreed salary and payment frequency?"
+      - "What are the working hours and location?"
+      - "Is there a probation period? If so, how long?"
+      - "What benefits are included (leave, health insurance, etc.)?"
+      - "What is the notice period for termination?"
+
+    # Validation questions
+    validation_questions:
+      - "Please confirm the employee's personal details"
+      - "Please review the salary and benefits package"
+      - "Please confirm the working conditions"
+      - "Please review the termination terms"
+
+    # Final confirmation
+    final_confirmation:
+      - "All information has been reviewed and is correct"
+      - "The contract complies with Kenyan employment law"
+      - "Both parties agree to the terms"
+      - "Ready to generate final document"
